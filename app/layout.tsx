@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Paul Borgen | Software Engineer",
   description: "Personal portfolio website of Paul Borgen, a software engineer specializing in Big Data, Blockchain, and much more.",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -26,3 +27,6 @@ export default function RootLayout({
   )
 }
 
+
+
+import './globals.css'

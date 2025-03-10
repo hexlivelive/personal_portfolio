@@ -1,25 +1,56 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  ExternalLink,
-} from "lucide-react";
-import { ThemeToggle } from "../theme-toggle";
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Github, Linkedin, Mail, Twitter, ExternalLink, Code, Star, GitFork } from "lucide-react"
+import { ThemeToggle } from "../theme-toggle"
 
 export default function Portfolio() {
+  // GitHub repositories data
+  const githubRepos = [
+    {
+      name: "Project Alpha",
+      description: "A modern React application with TypeScript and Next.js",
+      url: "https://github.com/pborgen/project-alpha",
+      stars: 45,
+      forks: 12,
+      language: "TypeScript",
+    },
+    {
+      name: "Data Visualizer",
+      description: "Interactive data visualization library built with D3.js",
+      url: "https://github.com/pborgen/data-visualizer",
+      stars: 78,
+      forks: 23,
+      language: "JavaScript",
+    },
+    {
+      name: "API Gateway",
+      description: "Scalable API gateway service with authentication and rate limiting",
+      url: "https://github.com/pborgen/api-gateway",
+      stars: 124,
+      forks: 37,
+      language: "Go",
+    },
+    {
+      name: "ML Toolkit",
+      description: "Collection of machine learning utilities and models",
+      url: "https://github.com/pborgen/ml-toolkit",
+      stars: 92,
+      forks: 18,
+      language: "Python",
+    },
+    {
+      name: "Smart Contract Library",
+      description: "Reusable smart contract components for Ethereum blockchain",
+      url: "https://github.com/pborgen/smart-contracts",
+      stars: 67,
+      forks: 15,
+      language: "Solidity",
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -30,68 +61,35 @@ export default function Portfolio() {
             </div>
           </div>
           <nav className="hidden md:flex gap-6">
-            <Link
-              href="#about"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">
               About
             </Link>
-            <Link
-              href="#skills"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link href="#skills" className="text-sm font-medium hover:text-primary transition-colors">
               Skills
             </Link>
-            <Link
-              href="#projects"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link href="#projects" className="text-sm font-medium hover:text-primary transition-colors">
               Projects
             </Link>
-            <Link
-              href="#github"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link href="#github" className="text-sm font-medium hover:text-primary transition-colors">
               GitHub
             </Link>
-            <Link
-              href="#experience"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link href="#experience" className="text-sm font-medium hover:text-primary transition-colors">
               Experience
             </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
               Contact
-            </Link>
-            <Link
-              href="/PaulBorgenResume_2024_v2.pdf"
-              target="_blank"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Download Resume
             </Link>
           </nav>
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <Button variant="outline" size="icon" asChild>
-              <Link
-                href="#github"
-                target="#"
-    
-              >
+              <Link href="https://github.com/pborgen" target="_blank" rel="noopener noreferrer">
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
-              <Link
-                href="https://www.linkedin.com/in/paulborgen/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="https://www.linkedin.com/in/paulborgen/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -99,34 +97,21 @@ export default function Portfolio() {
             <Button className="hidden md:flex" asChild>
               <Link href="#contact">Contact Me</Link>
             </Button>
-            <Button className="hidden md:flex" variant="outline" asChild>
-              <Link
-                href="/PaulBorgenResume_2024_v2.pdf"
-                target="_blank"
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                Download Resume
-              </Link>
-            </Button>
           </div>
         </div>
       </header>
 
       <main className="container py-8 md:py-12">
         {/* Hero Section */}
-        <section
-          id="about"
-          className="py-12 md:py-24 lg:py-32 flex flex-col md:flex-row items-center gap-8 md:gap-16"
-        >
+        <section id="about" className="py-12 md:py-24 lg:py-32 flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="flex-1 space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-              Hi, I&apos;m Paul Borgen
+              Hi, I'm Paul Borgen
               <span className="block text-primary">Software Engineer</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              I build accessible, user-friendly web applications with modern
-              technologies. Passionate about creating elegant solutions to
-              complex problems.
+              I build accessible, user-friendly web applications with modern technologies. Passionate about creating
+              elegant solutions to complex problems.
             </p>
             <div className="flex gap-4 pt-4">
               <Button asChild>
@@ -140,7 +125,7 @@ export default function Portfolio() {
           <div className="flex-1 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
               <Image
-                src="/headshot.jpg?height=320&width=320"
+                src="/placeholder.svg?height=320&width=320"
                 alt="Paul Borgen"
                 fill
                 className="object-cover"
@@ -155,8 +140,7 @@ export default function Portfolio() {
           <div className="space-y-4 text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">My Skills</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              I&apos;ve worked with a variety of technologies and frameworks to
-              create robust applications.
+              I've worked with a variety of technologies and frameworks to create robust applications.
             </p>
           </div>
 
@@ -177,8 +161,7 @@ export default function Portfolio() {
                   <Badge>Redux</Badge>
                 </div>
                 <p className="text-muted-foreground">
-                  Building responsive, accessible, and performant user
-                  interfaces with modern frameworks and tools.
+                  Building responsive, accessible, and performant user interfaces with modern frameworks and tools.
                 </p>
               </CardContent>
             </Card>
@@ -199,8 +182,7 @@ export default function Portfolio() {
                   <Badge>MongoDB</Badge>
                 </div>
                 <p className="text-muted-foreground">
-                  Developing scalable server-side applications and APIs with a
-                  focus on performance and security.
+                  Developing scalable server-side applications and APIs with a focus on performance and security.
                 </p>
               </CardContent>
             </Card>
@@ -221,8 +203,8 @@ export default function Portfolio() {
                   <Badge>Cypress</Badge>
                 </div>
                 <p className="text-muted-foreground">
-                  Implementing automated workflows, testing strategies, and
-                  deployment pipelines for efficient development.
+                  Implementing automated workflows, testing strategies, and deployment pipelines for efficient
+                  development.
                 </p>
               </CardContent>
             </Card>
@@ -232,9 +214,7 @@ export default function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="py-12 md:py-24 border-t">
           <div className="space-y-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Featured Projects
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A selection of my recent work and personal projects.
             </p>
@@ -254,18 +234,8 @@ export default function Portfolio() {
                 <CardHeader>
                   <CardTitle>Project {project}</CardTitle>
                   <CardDescription>
-                    A{" "}
-                    {project === 1
-                      ? "web application"
-                      : project === 2
-                      ? "mobile app"
-                      : "full-stack platform"}{" "}
-                    built with{" "}
-                    {project === 1
-                      ? "React and Node.js"
-                      : project === 2
-                      ? "React Native"
-                      : "Next.js and MongoDB"}
+                    A {project === 1 ? "web application" : project === 2 ? "mobile app" : "full-stack platform"} built
+                    with {project === 1 ? "React and Node.js" : project === 2 ? "React Native" : "Next.js and MongoDB"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
@@ -273,8 +243,8 @@ export default function Portfolio() {
                     {project === 1
                       ? "An e-commerce platform with user authentication, product catalog, and payment processing."
                       : project === 2
-                      ? "A cross-platform mobile application for tracking fitness goals and nutrition."
-                      : "A content management system with real-time collaboration features."}
+                        ? "A cross-platform mobile application for tracking fitness goals and nutrition."
+                        : "A content management system with real-time collaboration features."}
                   </p>
                 </CardContent>
                 <CardFooter className="flex justify-between">
@@ -305,161 +275,125 @@ export default function Portfolio() {
         {/* GitHub Repositories Section */}
         <section id="github" className="py-12 md:py-24 border-t">
           <div className="space-y-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              GitHub Repositories
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold">GitHub Repositories</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Open source projects and contributions I&apos;ve made to the developer
-              community.
+              Open source projects and contributions I've made to the developer community.
             </p>
           </div>
 
-          {/* AI Image generation */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card
-              key="ai-toolkit"
-              className="overflow-hidden flex flex-col flex-1"
-            >
-              <CardHeader>
-                <CardTitle>AI Image generation</CardTitle>
-                <CardDescription>
-                  This is part of a larger project that I was working on. It is
-                  a toolkit for creating and managing AI images. This code here
-                  is the code for the image generation. I used a open source
-                  project call ai-toolkit to build upon.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-muted-foreground">
-                  https://github.com/hexlivelive/ai-toolkit
-                </p>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href="https://github.com/hexlivelive/ai-toolkit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {githubRepos.map((repo, index) => (
+              <Card key={index} className="hover:shadow-md transition-shadow">
+                <CardHeader className="pb-2">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        <Github className="h-5 w-5 text-primary" />
+                        <Link
+                          href={repo.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary transition-colors"
+                        >
+                          {repo.name}
+                        </Link>
+                      </CardTitle>
+                      <CardDescription className="mt-1">{repo.description}</CardDescription>
+                    </div>
+                    <Badge variant="outline">{repo.language}</Badge>
+                  </div>
+                </CardHeader>
+                <CardFooter className="pt-2 flex justify-between text-sm text-muted-foreground">
+                  <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-1">
+                      <Star className="h-4 w-4" />
+                      <span>{repo.stars}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <GitFork className="h-4 w-4" />
+                      <span>{repo.forks}</span>
+                    </div>
+                  </div>
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link href={repo.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      <Code className="h-4 w-4" />
+                      View Code
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
 
-            {/* NFT Marketplace Smart Contracts */}
-            <Card
-              key="nft-marketplace-thirdweb"
-              className="overflow-hidden flex flex-col flex-1"
-            >
-              <CardHeader>
-                <CardTitle>NFT Marketplace Smart Contracts</CardTitle>
-                <CardDescription>
-                  In this project I created the smart contracts for a NFT
-                  marketplace using thirdweb. The thirdweb smart contract had to
-                  be heavily modified to fit the needs of the marketplace.
-                  Foundry was used to aid in this development. I also have 100%
-                  test coverage for the contracts that I wrote.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-muted-foreground">
-                  https://github.com/mintra-marketplace
-                </p>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href="https://github.com/mintra-marketplace/thirdweb_contracts/blob/main/contracts/prebuilts/marketplace/direct-listings/MintraDirectListings.sol"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-                <Button size="sm" asChild>
-                  <Link
-                    href="https://app.mintra.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    Live Demo
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="flex justify-center mt-12">
+            <Button asChild>
+              <Link
+                href="https://github.com/pborgen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Github className="h-4 w-4" />
+                View All Repositories
+              </Link>
+            </Button>
+          </div>
+        </section>
 
-            {/* https://github.com/pborgen/go-pulse-mev */}
-            <Card
-              key="go-pulse-mev"
-              className="overflow-hidden flex flex-col flex-1"
-            >
-              <CardHeader>
-                <CardTitle>Go Pulse MEV</CardTitle>
-                <CardDescription>
-                  This is a augmented ethereum geth client that lets you order
-                  the transaction with you client wins a block. This is not
-                  complete but I was able to create a way to order transactions
-                  as you like. I also added a feature that allows you to
-                  prioritize transactions based on your needs.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-muted-foreground">
-                  https://github.com/pborgen/go-pulse-mev
-                </p>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href="https://github.com/pborgen/go-pulse-mev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+        {/* Experience Section */}
+        <section id="experience" className="py-12 md:py-24 border-t">
+          <div className="space-y-4 text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">Work Experience</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              My professional journey and the companies I've worked with.
+            </p>
+          </div>
 
-            {/* https://github.com/pborgen/ethdataanalyze */}
-            <Card
-              key="py-eth-data-analyze"
-              className="overflow-hidden flex flex-col flex-1"
-            >
-              <CardHeader>
-                <CardTitle>Python Ethereum Data Analysis with Dask and Pandas</CardTitle>
-                <CardDescription>
-                  Project to analyze ethereum data using python, pandas and dask.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-muted-foreground">
-                https://github.com/pborgen/ethdataanalyze
-                </p>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <Link
-                    href="https://github.com/pborgen/ethdataanalyze"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="space-y-8 max-w-3xl mx-auto">
+            {[
+              {
+                role: "Senior Software Engineer",
+                company: "Tech Solutions Inc.",
+                period: "2021 - Present",
+                description:
+                  "Leading the frontend development team, architecting scalable web applications, and implementing CI/CD pipelines.",
+              },
+              {
+                role: "Software Developer",
+                company: "Digital Innovations",
+                period: "2018 - 2021",
+                description:
+                  "Developed and maintained multiple client projects using React, Node.js, and AWS services.",
+              },
+              {
+                role: "Junior Web Developer",
+                company: "Creative Web Agency",
+                period: "2016 - 2018",
+                description:
+                  "Built responsive websites and implemented UI designs for various clients across different industries.",
+              },
+            ].map((job, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle>{job.role}</CardTitle>
+                      <CardDescription className="text-lg">{job.company}</CardDescription>
+                    </div>
+                    <Badge variant="outline">{job.period}</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{job.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <Button variant="outline" asChild>
+              <Link href="#">Download Resume</Link>
+            </Button>
           </div>
         </section>
 
@@ -468,8 +402,7 @@ export default function Portfolio() {
           <div className="space-y-4 text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to discuss opportunities? I&apos;d love
-              to hear from you.
+              Have a project in mind or want to discuss opportunities? I'd love to hear from you.
             </p>
           </div>
 
@@ -481,7 +414,7 @@ export default function Portfolio() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <p>pborgennc@gmail.com</p>
+                  <p>paul.borgen@example.com</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-primary" />
@@ -489,12 +422,68 @@ export default function Portfolio() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-primary" />
-                  <p>github.com/pborgen</p>
+                  <p>github.com/paulborgen</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Twitter className="h-5 w-5 text-primary" />
                   <p>twitter.com/paulborgen</p>
                 </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Send a Message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium">
+                        Name
+                      </label>
+                      <input
+                        id="name"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        placeholder="Your email"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-sm font-medium">
+                      Subject
+                    </label>
+                    <input
+                      id="subject"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      placeholder="Subject of your message"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      placeholder="Your message"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full">
+                    Send Message
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
@@ -510,21 +499,13 @@ export default function Portfolio() {
           </div>
           <div className="flex gap-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link
-                href="https://github.com/pborgen"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="https://github.com/pborgen" target="_blank" rel="noopener noreferrer">
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link
-                href="https://www.linkedin.com/in/paulborgen/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="https://www.linkedin.com/in/paulborgen/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -539,5 +520,6 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
+
