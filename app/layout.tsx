@@ -1,32 +1,39 @@
-import type React from "react"
-import "./globals.css"
-import { Inter } from "next/font/google"
-import { ThemeProvider } from "../theme-provider"
+import type React from "react";
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "../theme-provider";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Paul Borgen | Software Engineer",
-  description: "Personal portfolio website of Paul Borgen, a software engineer specializing in Big Data, Blockchain, and much more.",
-    generator: 'v0.dev'
-}
+  description:
+    "Personal portfolio website of Paul Borgen, a software engineer specializing in Big Data, Blockchain, and much more.",
+  generator: "Paul Borgen",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" type="image/x-icon" href="/317910_messages_icon.ico" />
+      </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
 
-
-
-import './globals.css'
+import "./globals.css";
