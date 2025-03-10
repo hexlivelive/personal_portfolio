@@ -16,9 +16,6 @@ import {
   Mail,
   Twitter,
   ExternalLink,
-  Code,
-  Star,
-  GitFork,
 } from "lucide-react";
 import { ThemeToggle } from "../theme-toggle";
 
@@ -123,7 +120,7 @@ export default function Portfolio() {
         >
           <div className="flex-1 space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-              Hi, I'm Paul Borgen
+              Hi, I&apos;m Paul Borgen
               <span className="block text-primary">Software Engineer</span>
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -158,7 +155,7 @@ export default function Portfolio() {
           <div className="space-y-4 text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">My Skills</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              I've worked with a variety of technologies and frameworks to
+              I&apos;ve worked with a variety of technologies and frameworks to
               create robust applications.
             </p>
           </div>
@@ -312,7 +309,7 @@ export default function Portfolio() {
               GitHub Repositories
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Open source projects and contributions I've made to the developer
+              Open source projects and contributions I&apos;ve made to the developer
               community.
             </p>
           </div>
@@ -471,7 +468,7 @@ export default function Portfolio() {
           <div className="space-y-4 text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to discuss opportunities? I'd love
+              Have a project in mind or want to discuss opportunities? I&apos;d love
               to hear from you.
             </p>
           </div>
