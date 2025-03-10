@@ -1,40 +1,60 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, Twitter, ExternalLink, Code, Star, GitFork } from "lucide-react"
-import { ThemeToggle } from "../theme-toggle"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  ExternalLink,
+  Code,
+  Star,
+  GitFork,
+  Languages,
+} from "lucide-react";
+import { ThemeToggle } from "../theme-toggle";
 
 export default function Portfolio() {
   // GitHub repositories data
   const githubRepos = [
     {
       name: "AI Image generation",
-      description: "This is part of a larger project that I was working on. It is a toolkit for creating and managing AI images. This code here is the code for the image generation. I used a open source project call ai-toolkit to build upon.",
+      description:
+        "This is part of a larger project that I was working on. It is a toolkit for creating and managing AI images. This code here is the code for the image generation. I used a open source project call ai-toolkit to build upon.",
       url: "https://github.com/hexlivelive/ai-toolkit",
       language: "Python",
     },
     {
       name: "NFT Marketplace Smart Contracts",
-      description: "In this project I created the smart contracts for a NFT marketplace using thirdweb. The thirdweb smart contract had to be heavily modified to fit the needs of the marketplace. Foundry was used to aid in this development. I also have 100% test coverage for the contracts that I wrote. Main work was done here https://github.com/mintra-marketplace/thirdweb_contracts/blob/main/contracts/prebuilts/marketplace/direct-listings/MintraDirectListings.sol",
+      description:
+        "In this project I created the smart contracts for a NFT marketplace using thirdweb. The thirdweb smart contract had to be heavily modified to fit the needs of the marketplace. Foundry was used to aid in this development. I also have 100% test coverage for the contracts that I wrote. Main work was done here https://github.com/mintra-marketplace/thirdweb_contracts/blob/main/contracts/prebuilts/marketplace/direct-listings/MintraDirectListings.sol",
       url: "https://github.com/mintra-marketplace",
       language: "Solidity",
     },
     {
       name: "Go Pulse MEV",
-      description: "This is a augmented ethereum geth client that lets you order the transaction with you client wins a block. This is not complete but I was able to create a way to order transactions as you like. I also added a feature that allows you to prioritize transactions based on your needs.",
+      description:
+        "This is a augmented ethereum geth client that lets you order the transaction with you client wins a block. This is not complete but I was able to create a way to order transactions as you like. I also added a feature that allows you to prioritize transactions based on your needs.",
       url: "https://github.com/pborgen/go-pulse-mev",
       language: "Go",
     },
     {
       name: "Python Ethereum Data Analysis with Dask and Pandas",
-      description: "Project to analyze ethereum data using python, pandas and dask.",
+      description:
+        "Project to analyze ethereum data using python, pandas and dask.",
       url: "https://github.com/pborgen/ethdataanalyze",
       language: "Python",
     },
-
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,22 +66,40 @@ export default function Portfolio() {
             </div>
           </div>
           <nav className="hidden md:flex gap-6">
-            <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#about"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               About
             </Link>
-            <Link href="#skills" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#skills"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Skills
             </Link>
-            <Link href="#projects" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#projects"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Projects
             </Link>
-            <Link href="#github" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#github"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               GitHub
             </Link>
-            <Link href="#experience" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#experience"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Experience
             </Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#contact"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Contact
             </Link>
             <Link
@@ -75,13 +113,21 @@ export default function Portfolio() {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <Button variant="outline" size="icon" asChild>
-              <Link href="https://github.com/pborgen" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/pborgen"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
-              <Link href="https://www.linkedin.com/in/paulborgen/" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.linkedin.com/in/paulborgen/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -104,15 +150,19 @@ export default function Portfolio() {
 
       <main className="container py-8 md:py-12">
         {/* Hero Section */}
-        <section id="about" className="py-12 md:py-24 lg:py-32 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+        <section
+          id="about"
+          className="py-12 md:py-24 lg:py-32 flex flex-col md:flex-row items-center gap-8 md:gap-16"
+        >
           <div className="flex-1 space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
               Hi, I'm Paul Borgen
               <span className="block text-primary">Software Engineer</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              I build accessible, user-friendly web applications with modern technologies. Passionate about creating
-              elegant solutions to complex problems.
+              I build accessible, user-friendly web applications with modern
+              technologies. Passionate about creating elegant solutions to
+              complex problems.
             </p>
             <div className="flex gap-4 pt-4">
               <Button asChild>
@@ -141,13 +191,12 @@ export default function Portfolio() {
           <div className="space-y-4 text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">My Skills</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              I've worked with a variety of technologies and frameworks to create robust applications.
+              I've worked with a variety of technologies and frameworks to
+              create robust applications.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-
             <Card>
               <CardHeader>
                 <CardTitle>Backend Development</CardTitle>
@@ -164,7 +213,8 @@ export default function Portfolio() {
                   <Badge>MongoDB</Badge>
                 </div>
                 <p className="text-muted-foreground">
-                  Developing scalable server-side applications and APIs with a focus on performance and security.
+                  Developing scalable server-side applications and APIs with a
+                  focus on performance and security.
                 </p>
               </CardContent>
             </Card>
@@ -185,8 +235,8 @@ export default function Portfolio() {
                   <Badge>Cypress</Badge>
                 </div>
                 <p className="text-muted-foreground">
-                  Implementing automated workflows, testing strategies, and deployment pipelines for efficient
-                  development.
+                  Implementing automated workflows, testing strategies, and
+                  deployment pipelines for efficient development.
                 </p>
               </CardContent>
             </Card>
@@ -196,7 +246,9 @@ export default function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="py-12 md:py-24 border-t">
           <div className="space-y-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Featured Projects
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A selection of my recent work and personal projects.
             </p>
@@ -216,8 +268,18 @@ export default function Portfolio() {
                 <CardHeader>
                   <CardTitle>Project {project}</CardTitle>
                   <CardDescription>
-                    A {project === 1 ? "web application" : project === 2 ? "mobile app" : "full-stack platform"} built
-                    with {project === 1 ? "React and Node.js" : project === 2 ? "React Native" : "Next.js and MongoDB"}
+                    A{" "}
+                    {project === 1
+                      ? "web application"
+                      : project === 2
+                      ? "mobile app"
+                      : "full-stack platform"}{" "}
+                    built with{" "}
+                    {project === 1
+                      ? "React and Node.js"
+                      : project === 2
+                      ? "React Native"
+                      : "Next.js and MongoDB"}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
@@ -225,8 +287,8 @@ export default function Portfolio() {
                     {project === 1
                       ? "An e-commerce platform with user authentication, product catalog, and payment processing."
                       : project === 2
-                        ? "A cross-platform mobile application for tracking fitness goals and nutrition."
-                        : "A content management system with real-time collaboration features."}
+                      ? "A cross-platform mobile application for tracking fitness goals and nutrition."
+                      : "A content management system with real-time collaboration features."}
                   </p>
                 </CardContent>
                 <CardFooter className="flex justify-between">
@@ -257,9 +319,12 @@ export default function Portfolio() {
         {/* GitHub Repositories Section */}
         <section id="github" className="py-12 md:py-24 border-t">
           <div className="space-y-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">GitHub Repositories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              GitHub Repositories
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Open source projects and contributions I've made to the developer community.
+              Open source projects and contributions I've made to the developer
+              community.
             </p>
           </div>
 
@@ -280,14 +345,21 @@ export default function Portfolio() {
                           {repo.name}
                         </Link>
                       </CardTitle>
-                      <CardDescription className="mt-1">{repo.description}</CardDescription>
+                      <CardDescription className="mt-1">
+                        {repo.description}
+                      </CardDescription>
                     </div>
                     <Badge variant="outline">{repo.language}</Badge>
                   </div>
                 </CardHeader>
                 <CardFooter className="pt-2 flex justify-between text-sm text-muted-foreground">
                   <Button variant="ghost" size="sm" asChild>
-                    <Link href={repo.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                    <Link
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1"
+                    >
                       <Code className="h-4 w-4" />
                       View Code
                     </Link>
@@ -296,7 +368,6 @@ export default function Portfolio() {
               </Card>
             ))}
           </div>
-
         </section>
 
         {/* Experience Section */}
@@ -311,25 +382,36 @@ export default function Portfolio() {
           <div className="space-y-8 max-w-3xl mx-auto">
             {[
               {
-                role: "Senior Software Engineer",
-                company: "Tech Solutions Inc.",
+                role: "CTO / Lead Software Engineer",
+                company: "Mintra Marketplace",
                 period: "2021 - Present",
+                languages: "Solidity, Go, Typescript",
                 description:
-                  "Leading the frontend development team, architecting scalable web applications, and implementing CI/CD pipelines.",
+                  "Built a NFT marketplace with a great team from the ground up.",
               },
               {
-                role: "Software Developer",
-                company: "Digital Innovations",
-                period: "2018 - 2021",
+                role: "Lead Software Engineer",
+                company: "Precision Point Systems",
+                period: "2020 - 2021",
+                languages: "Go, Python, C++, C#, Javascript",
                 description:
-                  "Developed and maintained multiple client projects using React, Node.js, and AWS services.",
+                  "Development a system to track a football in real time during games. This was done using a combination of computer vision and machine learning.",
               },
               {
-                role: "Junior Web Developer",
-                company: "Creative Web Agency",
-                period: "2016 - 2018",
+                role: "Advanced Software Engineer",
+                company: "Honeywell",
+                period: "2016 - 2020",
+                languages: "Java, Javascript, Python",
                 description:
-                  "Built responsive websites and implemented UI designs for various clients across different industries.",
+                  "Big Data analysis / DevOps / Full Stack Development",
+              },
+              {
+                role: "Senior Software Engineer",
+                company: "Honeywell",
+                period: "2012 - 2016",
+                languages: "Java, Javascript, Python",
+                description:
+                  "Full Stack Development / Security / DevOps ",
               },
             ].map((job, index) => (
               <Card key={index}>
@@ -337,7 +419,9 @@ export default function Portfolio() {
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle>{job.role}</CardTitle>
-                      <CardDescription className="text-lg">{job.company}</CardDescription>
+                      <CardDescription className="text-lg">
+                        {job.company}
+                      </CardDescription>
                     </div>
                     <Badge variant="outline">{job.period}</Badge>
                   </div>
@@ -351,7 +435,13 @@ export default function Portfolio() {
 
           <div className="flex justify-center mt-12">
             <Button variant="outline" asChild>
-              <Link href="#">Download Resume</Link>
+              <Link
+                href="/PaulBorgenResume_2024_v2.pdf"
+                target="_blank"
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                Download Resume
+              </Link>
             </Button>
           </div>
         </section>
@@ -361,7 +451,8 @@ export default function Portfolio() {
           <div className="space-y-4 text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+              Have a project in mind or want to discuss opportunities? I'd love
+              to hear from you.
             </p>
           </div>
 
@@ -458,13 +549,21 @@ export default function Portfolio() {
           </div>
           <div className="flex gap-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com/pborgen" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/pborgen"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.linkedin.com/in/paulborgen/" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.linkedin.com/in/paulborgen/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -479,6 +578,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
