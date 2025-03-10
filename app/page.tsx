@@ -21,6 +21,7 @@ import {
   GitFork,
   Languages,
 } from "lucide-react";
+import TelegramIcon from "../public/telegram.svg";
 import { ThemeToggle } from "../theme-toggle";
 
 export default function Portfolio() {
@@ -199,22 +200,44 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <CardTitle>Backend Development</CardTitle>
+                <CardTitle>Languages</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex flex-wrap gap-2">
-                  <Badge>Node.js</Badge>
-                  <Badge>Express</Badge>
+                  <Badge>Go</Badge>
+                  <Badge>Typescript</Badge>
+                  <Badge>JavaScript</Badge>
                   <Badge>Python</Badge>
-                  <Badge>Django</Badge>
-                  <Badge>GraphQL</Badge>
-                  <Badge>REST APIs</Badge>
-                  <Badge>PostgreSQL</Badge>
-                  <Badge>MongoDB</Badge>
+                  <Badge>Java</Badge>
+                  <Badge>Bash</Badge>
+                  <Badge>C++</Badge>
+                  <Badge>C</Badge>
                 </div>
                 <p className="text-muted-foreground">
                   Developing scalable server-side applications and APIs with a
                   focus on performance and security.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Storage</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  <Badge>MongoDB</Badge>
+                  <Badge>Postgres</Badge>
+                  <Badge>MySQL</Badge>
+                  <Badge>Oracle</Badge>
+                  <Badge>Redis</Badge>
+                  <Badge>DragonFly</Badge>
+                  <Badge>Dask</Badge>
+                  <Badge>Parquet</Badge>
+                </div>
+                <p className="text-muted-foreground">
+                  May different ways to store your data. I have experience with
+                  many different types of databases and storage solutions.
                 </p>
               </CardContent>
             </Card>
@@ -227,16 +250,55 @@ export default function Portfolio() {
                 <div className="flex flex-wrap gap-2">
                   <Badge>Git</Badge>
                   <Badge>GitHub Actions</Badge>
+                  <Badge>GitLab</Badge>
+                  <Badge>GitLab Pipelines</Badge>
+                  <Badge>Jenkins</Badge>
                   <Badge>Docker</Badge>
                   <Badge>AWS</Badge>
                   <Badge>Vercel</Badge>
                   <Badge>CI/CD</Badge>
-                  <Badge>Jest</Badge>
-                  <Badge>Cypress</Badge>
                 </div>
                 <p className="text-muted-foreground">
-                  Implementing automated workflows, testing strategies, and
-                  deployment pipelines for efficient development.
+                  Some of the DevOps type tools I have been exposed to.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Frameworks</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  <Badge>NextJS</Badge>
+                  <Badge>NestJs</Badge>
+                  <Badge>Spring</Badge>
+                  <Badge>Hibernate</Badge>
+                  <Badge>ESAPI</Badge>
+                  <Badge>Maven</Badge>
+                  <Badge>Gradle</Badge>
+                  <Badge>Express</Badge>
+                  <Badge>React</Badge>
+                </div>
+                <p className="text-muted-foreground">
+                  Some of the frameworks I use and have used.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Blockchain</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Foundry</Badge>
+                  <Badge>Hardhat</Badge>
+                  <Badge>Solidity</Badge>
+                  <Badge>ABI's</Badge>
+                  <Badge>Data Pipelines</Badge>
+                </div>
+                <p className="text-muted-foreground">
+                  I have experience with blockchain development and have
+                  developed a NFT marketplace. As well as various data retrieval and analysis tools.
                 </p>
               </CardContent>
             </Card>
@@ -255,58 +317,34 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((project) => (
-              <Card key={project} className="overflow-hidden flex flex-col">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={`/placeholder.svg?height=192&width=384&text=Project+${project}`}
-                    alt={`Project ${project}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>Project {project}</CardTitle>
-                  <CardDescription>
-                    A{" "}
-                    {project === 1
-                      ? "web application"
-                      : project === 2
-                      ? "mobile app"
-                      : "full-stack platform"}{" "}
-                    built with{" "}
-                    {project === 1
-                      ? "React and Node.js"
-                      : project === 2
-                      ? "React Native"
-                      : "Next.js and MongoDB"}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <p className="text-muted-foreground">
-                    {project === 1
-                      ? "An e-commerce platform with user authentication, product catalog, and payment processing."
-                      : project === 2
-                      ? "A cross-platform mobile application for tracking fitness goals and nutrition."
-                      : "A content management system with real-time collaboration features."}
-                  </p>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="#" className="flex items-center gap-1">
-                      <Github className="h-4 w-4" />
-                      Code
-                    </Link>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <Link href="#" className="flex items-center gap-1">
-                      <ExternalLink className="h-4 w-4" />
-                      Live Demo
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+            <Card key="mintra" className="overflow-hidden flex flex-col">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={`/mintraLogo.png?height=192&width=384`}
+                  alt={`Mintra`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Mintra Marketplace</CardTitle>
+                <CardDescription>
+                  "NFT Marketplace build from the ground up. No fork required."
+                </CardDescription>
+              </CardHeader>
+
+              <CardFooter className="flex justify-between">
+                <Button size="sm" asChild>
+                  <Link
+                    href="https://app.mintra.ai"
+                    className="flex items-center gap-1"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Live Demo
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
 
           <div className="flex justify-center mt-12">
@@ -410,8 +448,7 @@ export default function Portfolio() {
                 company: "Honeywell",
                 period: "2012 - 2016",
                 languages: "Java, Javascript, Python",
-                description:
-                  "Full Stack Development / Security / DevOps ",
+                description: "Full Stack Development / Security / DevOps ",
               },
             ].map((job, index) => (
               <Card key={index}>
@@ -464,7 +501,7 @@ export default function Portfolio() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <p>paul.borgen@example.com</p>
+                  <p>pborgennc@gmail.com</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-primary" />
@@ -472,68 +509,16 @@ export default function Portfolio() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-primary" />
-                  <p>github.com/paulborgen</p>
+                  <p>https://github.com/pborgen</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Github className="h-5 w-5 text-primary" />
+                  <p>https://github.com/hexlivelive</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Twitter className="h-5 w-5 text-primary" />
                   <p>twitter.com/paulborgen</p>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Name
-                      </label>
-                      <input
-                        id="name"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Your email"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
-                    </label>
-                    <input
-                      id="subject"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Subject of your message"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Your message"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
               </CardContent>
             </Card>
           </div>
@@ -572,6 +557,18 @@ export default function Portfolio() {
               <Link href="mailto:pborgennc@gmail.com">
                 <Mail className="h-4 w-4" />
                 <span className="sr-only">Email</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <Link
+                href="https://t.me/hexlivelive"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="h-4 w-4 relative">
+                  <Image src="/telegram.svg" alt="Telegram" fill />
+                </div>
+                <span className="sr-only">Telegram</span>
               </Link>
             </Button>
           </div>
