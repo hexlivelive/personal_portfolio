@@ -122,6 +122,16 @@ export default function Portfolio() {
             </Button>
             <Button variant="outline" size="icon" asChild>
               <Link
+                href="https://github.com/hexlivelive"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4" />
+                <span className="sr-only">GitHub</span>
+              </Link>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+              <Link
                 href="https://www.linkedin.com/in/paulborgen/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -132,15 +142,6 @@ export default function Portfolio() {
             </Button>
             <Button className="hidden md:flex" asChild>
               <Link href="#contact">Contact Me</Link>
-            </Button>
-            <Button className="hidden md:flex" variant="outline" asChild>
-              <Link
-                href="/PaulBorgenResume_2024_v2.pdf"
-                target="_blank"
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                Download Resume
-              </Link>
             </Button>
           </div>
         </div>
@@ -501,9 +502,7 @@ export default function Portfolio() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <Link
-                    href="mailto:pborgennc@gmail.com"
-                  >
+                  <Link href="mailto:pborgennc@gmail.com">
                     pborgennc@gmail.com
                   </Link>
                 </div>
@@ -595,18 +594,6 @@ export default function Portfolio() {
               <Link href="mailto:pborgennc@gmail.com">
                 <Mail className="h-4 w-4" />
                 <span className="sr-only">Email</span>
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link
-                href="https://t.me/hexlivelive"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="h-4 w-4 relative">
-                  <Image src="/telegram.svg" alt="Telegram" fill />
-                </div>
-                <span className="sr-only">Telegram</span>
               </Link>
             </Button>
           </div>
