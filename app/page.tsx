@@ -17,9 +17,6 @@ import {
   Twitter,
   ExternalLink,
   Code,
-  Star,
-  GitFork,
-  Languages,
 } from "lucide-react";
 import TelegramIcon from "../public/telegram.svg";
 import { ThemeToggle } from "../theme-toggle";
@@ -174,10 +171,10 @@ export default function Portfolio() {
               </Button>
             </div>
           </div>
-          <div className="flex-1 flex justify-center md:justify-end">
+          <div className="flex-1 flex justify-center md:justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
               <Image
-                src="/placeholder.svg?height=320&width=320"
+                src="/headshot.jpg?height=320&width=320"
                 alt="Paul Borgen"
                 fill
                 className="object-cover"
@@ -298,7 +295,8 @@ export default function Portfolio() {
                 </div>
                 <p className="text-muted-foreground">
                   I have experience with blockchain development and have
-                  developed a NFT marketplace. As well as various data retrieval and analysis tools.
+                  developed a NFT marketplace. As well as various data retrieval
+                  and analysis tools.
                 </p>
               </CardContent>
             </Card>
@@ -337,6 +335,8 @@ export default function Portfolio() {
                 <Button size="sm" asChild>
                   <Link
                     href="https://app.mintra.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1"
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -501,23 +501,41 @@ export default function Portfolio() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <p>pborgennc@gmail.com</p>
+                  <Link
+                    href="mailto:pborgennc@gmail.com"
+                  >
+                    pborgennc@gmail.com
+                  </Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-primary" />
-                  <p>linkedin.com/in/paulborgen</p>
+                  <Link
+                    href="https://linkedin.com/in/paulborgen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    linkedin.com/in/paulborgen
+                  </Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-primary" />
-                  <p>https://github.com/pborgen</p>
+                  <Link
+                    href="https://github.com/pborgen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/pborgen
+                  </Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-primary" />
-                  <p>https://github.com/hexlivelive</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Twitter className="h-5 w-5 text-primary" />
-                  <p>twitter.com/paulborgen</p>
+                  <Link
+                    href="https://github.com/hexlivelive"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/hexlivelive
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -533,9 +551,29 @@ export default function Portfolio() {
             </p>
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon" asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="text-gray-500 hover:text-blue-500"
+            >
               <Link
                 href="https://github.com/pborgen"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4" />
+                <span className="sr-only">GitHub</span>
+              </Link>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="text-gray-500 hover:text-blue-500"
+            >
+              <Link
+                href="https://github.com/hexlivelive"
                 target="_blank"
                 rel="noopener noreferrer"
               >
