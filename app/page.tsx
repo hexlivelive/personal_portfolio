@@ -10,45 +10,30 @@ export default function Portfolio() {
   // GitHub repositories data
   const githubRepos = [
     {
-      name: "Project Alpha",
-      description: "A modern React application with TypeScript and Next.js",
-      url: "https://github.com/pborgen/project-alpha",
-      stars: 45,
-      forks: 12,
-      language: "TypeScript",
-    },
-    {
-      name: "Data Visualizer",
-      description: "Interactive data visualization library built with D3.js",
-      url: "https://github.com/pborgen/data-visualizer",
-      stars: 78,
-      forks: 23,
-      language: "JavaScript",
-    },
-    {
-      name: "API Gateway",
-      description: "Scalable API gateway service with authentication and rate limiting",
-      url: "https://github.com/pborgen/api-gateway",
-      stars: 124,
-      forks: 37,
-      language: "Go",
-    },
-    {
-      name: "ML Toolkit",
-      description: "Collection of machine learning utilities and models",
-      url: "https://github.com/pborgen/ml-toolkit",
-      stars: 92,
-      forks: 18,
+      name: "AI Image generation",
+      description: "This is part of a larger project that I was working on. It is a toolkit for creating and managing AI images. This code here is the code for the image generation. I used a open source project call ai-toolkit to build upon.",
+      url: "https://github.com/hexlivelive/ai-toolkit",
       language: "Python",
     },
     {
-      name: "Smart Contract Library",
-      description: "Reusable smart contract components for Ethereum blockchain",
-      url: "https://github.com/pborgen/smart-contracts",
-      stars: 67,
-      forks: 15,
+      name: "NFT Marketplace Smart Contracts",
+      description: "In this project I created the smart contracts for a NFT marketplace using thirdweb. The thirdweb smart contract had to be heavily modified to fit the needs of the marketplace. Foundry was used to aid in this development. I also have 100% test coverage for the contracts that I wrote. Main work was done here https://github.com/mintra-marketplace/thirdweb_contracts/blob/main/contracts/prebuilts/marketplace/direct-listings/MintraDirectListings.sol",
+      url: "https://github.com/mintra-marketplace",
       language: "Solidity",
     },
+    {
+      name: "Go Pulse MEV",
+      description: "This is a augmented ethereum geth client that lets you order the transaction with you client wins a block. This is not complete but I was able to create a way to order transactions as you like. I also added a feature that allows you to prioritize transactions based on your needs.",
+      url: "https://github.com/pborgen/go-pulse-mev",
+      language: "Go",
+    },
+    {
+      name: "Python Ethereum Data Analysis with Dask and Pandas",
+      description: "Project to analyze ethereum data using python, pandas and dask.",
+      url: "https://github.com/pborgen/ethdataanalyze",
+      language: "Python",
+    },
+
   ]
 
   return (
@@ -79,6 +64,13 @@ export default function Portfolio() {
             <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
               Contact
             </Link>
+            <Link
+              href="/PaulBorgenResume_2024_v2.pdf"
+              target="_blank"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Download Resume
+            </Link>
           </nav>
           <div className="flex items-center gap-4">
             <ThemeToggle />
@@ -96,6 +88,15 @@ export default function Portfolio() {
             </Button>
             <Button className="hidden md:flex" asChild>
               <Link href="#contact">Contact Me</Link>
+            </Button>
+            <Button className="hidden md:flex" variant="outline" asChild>
+              <Link
+                href="/PaulBorgenResume_2024_v2.pdf"
+                target="_blank"
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                Download Resume
+              </Link>
             </Button>
           </div>
         </div>
@@ -145,26 +146,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Frontend Development</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  <Badge>React</Badge>
-                  <Badge>Next.js</Badge>
-                  <Badge>TypeScript</Badge>
-                  <Badge>JavaScript</Badge>
-                  <Badge>HTML5</Badge>
-                  <Badge>CSS3</Badge>
-                  <Badge>Tailwind CSS</Badge>
-                  <Badge>Redux</Badge>
-                </div>
-                <p className="text-muted-foreground">
-                  Building responsive, accessible, and performant user interfaces with modern frameworks and tools.
-                </p>
-              </CardContent>
-            </Card>
+
 
             <Card>
               <CardHeader>
@@ -304,16 +286,6 @@ export default function Portfolio() {
                   </div>
                 </CardHeader>
                 <CardFooter className="pt-2 flex justify-between text-sm text-muted-foreground">
-                  <div className="flex items-center gap-6">
-                    <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4" />
-                      <span>{repo.stars}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <GitFork className="h-4 w-4" />
-                      <span>{repo.forks}</span>
-                    </div>
-                  </div>
                   <Button variant="ghost" size="sm" asChild>
                     <Link href={repo.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
                       <Code className="h-4 w-4" />
@@ -325,19 +297,6 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
-            <Button asChild>
-              <Link
-                href="https://github.com/pborgen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Github className="h-4 w-4" />
-                View All Repositories
-              </Link>
-            </Button>
-          </div>
         </section>
 
         {/* Experience Section */}
