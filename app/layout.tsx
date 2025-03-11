@@ -20,7 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/x-icon" href="/317910_messages_icon.ico" />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/artificial-intelligence.ico"
+          sizes="16x16 32x32 64x64"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16 32x32 64x64"
+          href="/artificial-intelligence.png"
+        />
       </head>
       <body className={inter.className}>
         <ThemeProvider
