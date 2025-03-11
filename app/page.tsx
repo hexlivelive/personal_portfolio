@@ -159,9 +159,13 @@ export default function Portfolio() {
               <span className="block text-primary">Software Engineer</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              I build accessible, user-friendly web applications with modern
-              technologies. Passionate about creating elegant solutions to
-              complex problems.
+            Results-driven experienced CTO and lead software engineer with a strong background at all layers of the software stack.
+            </p>
+            <p className="text-xl text-muted-foreground">
+            Proven ability to lead technical teams in developing innovative solutions, with a focus on driving strategy and operational efficiency. Skilled in
+            software design, testing, and project execution, ensuring timely delivery of high-quality solutions. Adept at working with diverse teams, building
+            strong relationships with stakeholders, and delivering customer-focused outcomes. Seeking a leadership role that combines technical expertise
+            with hands-on involvement.
             </p>
             <div className="flex gap-4 pt-4">
               <Button asChild>
